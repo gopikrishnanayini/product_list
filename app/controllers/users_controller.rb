@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_product, only: [:show, :create, :edit, :update, :destroy]
+  before_action :set_product, only: [:new, :show, :create, :edit, :update, :destroy]
   def index
   end
   def new
@@ -7,7 +7,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = @product.users.build(product_params)
+    @user = @product.users.build(user_params)
   	@user = User.new(user_params)
   	respond_to do |format|
       if @user.save
