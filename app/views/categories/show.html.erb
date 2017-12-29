@@ -1,0 +1,15 @@
+<% @category.products.each do |product| %>
+    <p>
+      <b>Product:</b>
+      <%= product.name %>
+    </p>
+    <p>
+      <b>Product:</b>
+      <%= product.category_name %>
+    </p>
+    <p>
+      <b>Product:</b>
+      <%= image_tag product.photo.url  %>
+    </p>
+<% end %>
+ <%= link_to 'Add Product', new_category_product_path(@category, @product) ,:class=>"btn btn-primary"  , :style => "text-decoration: none"%>

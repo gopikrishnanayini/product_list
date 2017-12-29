@@ -1,0 +1,10 @@
+<% @products.each do |product| %>
+  <div class="col-lg-3 col-sm-6 col-xs-12 center-block " >
+    <%= image_tag product.photo.url, height: "300", class: "img-responsive" %>
+    <div class="product_description">
+      <h5><%= link_to product.name, category_product_path(@category, product) %></h5>
+      <p><%= product.category_name %></p>
+    </div>
+  </div>
+ <% end %>
+ <%= link_to 'Add Product', new_category_product_path ,:class=>"btn btn-primary" %>

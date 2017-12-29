@@ -1,0 +1,16 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @user.name %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @user.address %>
+</p>
+<p>
+  <strong>Quantity:</strong>
+  <%= @user.quantity %>
+</p>
+<%= link_to 'Edit', edit_product_user_path(@user) %> |
