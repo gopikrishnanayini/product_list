@@ -1,16 +1,13 @@
 class ProductsController < ApplicationController
-  before_action :set_product, only: [:show, :edit, :update, :destroy]
-  before_action :set_category, only: [:show, :create, :edit, :update, :destroy]
+  before_action :set_category, only: [:new, :show, :create, :edit, :update, :destroy]
 
 
   def index
-    @category = Category.find(params[:category_id])
     @products = @category.products
   end
 
 
   def new
-   @category = Category.find(params[:category_id])
     @product = @category.products.build
   end
 
@@ -29,7 +26,7 @@ class ProductsController < ApplicationController
   end
 
   def show
-  @category = Category.find(params[:category_id])
+  @product = @category.products.find(params[:id])
   end
 
   def edit
@@ -58,10 +55,6 @@ class ProductsController < ApplicationController
   end
 
   private
-    def set_product
-      @product = Product.find(params[:id])
-    end
-
     def set_category
       @category = Category.find(params[:category_id])
     end
